@@ -278,7 +278,7 @@ namespace esphome
 
     void IGrill::read_temperature_unit_(uint8_t *raw_value, uint16_t value_len)
     {
-      if (raw_value[0] == 0)
+      /*if (raw_value[0] == 0)
       {
         this->unit_of_measurement_ =  FAHRENHEIT_UNIT_STRING;
       }
@@ -293,7 +293,11 @@ namespace esphome
         {
           sensor->set_unit_of_measurement(this->unit_of_measurement_);
         }
-      }
+      }*/
+      
+      this->unit_of_measurement_ = CELCIUS_UNIT_STRING;
+      ESP_LOGI(TAG, "Setting temperature unit based on device: %s", this->unit_of_measurement_);
+      sensor->set_unit_of_measurement(this->unit_of_measurement_);
       request_read_values_();
     }
     
