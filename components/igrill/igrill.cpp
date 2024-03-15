@@ -283,9 +283,9 @@ namespace esphome
         this->unit_of_measurement_ =  FAHRENHEIT_UNIT_STRING;
       }
       else
-      {
+      {*/
         this->unit_of_measurement_ = CELCIUS_UNIT_STRING;
-      }
+      //}
       ESP_LOGI(TAG, "Setting temperature unit based on device: %s", this->unit_of_measurement_);
       for (auto & sensor : this->sensors_)
       {
@@ -293,11 +293,7 @@ namespace esphome
         {
           sensor->set_unit_of_measurement(this->unit_of_measurement_);
         }
-      }*/
-      
-      this->unit_of_measurement_ = CELCIUS_UNIT_STRING;
-      ESP_LOGI(TAG, "Settingtemperature unit based on device: %s", this->unit_of_measurement_);
-      sensor->set_unit_of_measurement(this->unit_of_measurement_);
+      }
       request_read_values_();
     }
     
