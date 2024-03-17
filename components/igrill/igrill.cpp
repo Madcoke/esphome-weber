@@ -286,6 +286,8 @@ namespace esphome
       {
         this->unit_of_measurement_ = FAHRENHEIT_UNIT_STRING;
       }
+      ESP_LOGV(TAG, "Parsing temperature from probe %d", raw_value[0]);
+      
       ESP_LOGI(TAG, "Setting temperature unit based on device: %s", this->unit_of_measurement_);
       for (auto & sensor : this->sensors_)
       {
